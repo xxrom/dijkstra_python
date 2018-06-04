@@ -31,12 +31,12 @@ class Algorithm(object):
 
   def calculateShortestPath(self, vertexList, startVertex):
 
-    queue = []
+    pyramid = []
     startVertex.minDistance = 0
-    heapq.heappush(queue, startVertex) # init heap in 'q'
+    heapq.heappush(pyramid, startVertex) # init heap in 'q'
 
-    while queue: # queue <==> len(queue) > 0
-      acturalVertex = heapq.heappop(queue) # get node with min distance
+    while pyramid: # pyramid <==> len(pyramid) > 0
+      acturalVertex = heapq.heappop(pyramid) # get node with min distance
 
       # проходимся по всем соседям в данной вершине
       for edge in acturalVertex.adjacenciesList:
@@ -48,7 +48,7 @@ class Algorithm(object):
         if newDistance < target.minDistance: # если новое меньше, то ...
           target.predecessor = start
           target.minDistance = newDistance
-          heapq.heappush(queue, target)
+          heapq.heappush(pyramid, target)
 
   def getShortestPathTo(self, targetVertex):
     print('Shortest path to vertex')
