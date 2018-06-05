@@ -10,8 +10,8 @@
 # сложность алгоритма O(V*E),
 # а Дейкстра сложность O(V * logV + E) с heap, без будет O(V^2 + E)
 
-import sys
-import heapq
+import sys # for sys.maxsize infinity
+import heapq # for heap
 
 class Edge(object):
 
